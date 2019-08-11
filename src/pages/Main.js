@@ -39,7 +39,7 @@ export default function Main ({ match }) {
       headers: { user: match.params.id }
     })
 
-    setUsers(users.filter(user => user._id != id))
+    setUsers(users.filter(user => user._id !== id))
   }
 
   async function handleDislike (id) {
@@ -47,7 +47,7 @@ export default function Main ({ match }) {
       headers: { user: match.params.id }
     })
 
-    setUsers(users.filter(user => user._id != id))
+    setUsers(users.filter(user => user._id !== id))
   }
 
   return (
@@ -77,7 +77,7 @@ export default function Main ({ match }) {
           ))}
         </ul>
         : (
-          <div className="empty">Acabou :(</div>
+          <div className="empty">Ended :(</div>
         )}
 
       {matchDev && (
@@ -86,7 +86,7 @@ export default function Main ({ match }) {
           <img className='avatar' src={matchDev.avatar} alt=""/>
           <strong>{matchDev.name}</strong>
           <p>{matchDev.bio}</p>
-          <button type='button' onClick={() => setMatchDev(null)}>Fechar</button>
+          <button type='button' onClick={() => setMatchDev(null)}>CLOSE</button>
         </div>
       )}
     </div>
